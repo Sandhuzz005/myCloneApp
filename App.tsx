@@ -6,37 +6,26 @@ import {
   Image,
   Button,
   Alert,
- 
+  TouchableOpacity,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const App = () => {
+
   return (
     <View style={styles.container}>
       
       <View style={styles.header}>
-        
-        
-        <View style={styles.headerIcons}>
-          
-            <Text style={styles.icon}></Text>
-         
-        </View>
+        <Text style={styles.headerTitle}>Group Profile</Text>
       </View>
-
-   
-
-      <Text style={styles.headerTitle}>Group Profile</Text>
-      <Text style={styles.headertext}>ootd_everyday</Text>
+      
       <View style={styles.profileInfo}>
-
-        
         <Image
-          source={require('./assets/insta.jpeg')}
+          source={require('./assets/insta.jpg')}
           style={styles.profileImage}
         />
         <Text style={styles.profileName}>OOTD Everyday</Text>
-        <Text style={styles.profileBio}>Fit check! 👕</Text>
+        <Text style={styles.profileBio}>Fit check! </Text>
         <Text style={styles.profileBio}>You know we’ll hype you up.</Text>
         <Text style={styles.MemberButton}><Button 
           title="Member"
@@ -44,51 +33,24 @@ const App = () => {
         /></Text>
         
         <Image
-          source={require('./assets/insta-post.jpeg')}
+          source={require('./assets/insta-post.jpg')}
           style={styles.Image}
         />
         <Text style={styles.alert}><Button 
           title="Alert"
           onPress={() => Alert.alert('Alert Button pressed')}
         /></Text>
-      </View>
-
-      <View style={styles.footer}>
-      <Image
-          source={require('./assets/Home-Icon.jpeg')}
-          style={styles.footerIcon1}
-        />
-        <Image
-          source={require('./assets/Search-icon.png')}
-          style={styles.footerIcon2}
-        />
-        <Image
-          source={require('./assets/Search-icon.png')}
-          style={styles.footerIcon2}
-        />
-        <Image
-          source={require('./assets/icon4.jpeg')}
-          style={styles.footerIcon2}
-        />
-        <Image
-          source={require('./assets/icon5.jpeg')}
-          style={styles.footerIcon2}
-        />
-
-      </View>
+      </View>  
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  
   container: {
-    marginTop:40,
     flex: 1,
     backgroundColor: "#fff",
   },
   header: {
-    
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -97,19 +59,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#ddd",
   },
-
   headerTitle: {
-    
     fontSize: 18,
     fontWeight: "bold",
-    textAlign:"center"
+    alignItems:"center",
   },
-  headertext:{
-    fontSize: 12,
-    color: "#555",
-    marginLeft:156,
-  },
-
   headerIcons: {
     flexDirection: "row",
   },
@@ -118,6 +72,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   profileInfo: {
+    alignItems: "center",
     padding: 20,
   },
   profileImage: {
@@ -125,7 +80,6 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 40,
     marginBottom: 10,
-    marginRight:280,
   },
   profileName: {
     fontSize: 18,
@@ -134,6 +88,7 @@ const styles = StyleSheet.create({
   profileBio: {
     fontSize: 14,
     color: "#555",
+    
   },
   MemberButton: {
     height:40,
@@ -141,41 +96,37 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     borderWidth: 1,
   },
+  alertButton: {
+    marginTop: 10,
+    backgroundColor: "#ddd",
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 5,
+  },
   alert: {
     width: '100%',
-    marginTop:5,
-    paddingHorizontal: 150,
+    
     backgroundColor: '#ddd',
+    alignItems: 'center',
 
   },
-
+  
   Image:{
-    marginTop:5,
+   
     width: "100%",
     height: 450,
   },
   footer: {
-    
     flexDirection: "row",
-    justifyContent: "space-between",
-    marginHorizontal: 15,
+    justifyContent: "space-around",
     alignItems: "center",
-    paddingVertical: 0,
+    paddingVertical: 20,
     borderTopWidth: 1,
     borderTopColor: "#ddd",
   },
-  footerIcon1: {
-    width: "12%",
-    height: 45,
+  footerIcon: {
+    fontSize: 18,
   },
-  footerIcon2: {
-    width: "12%",
-    height: 45,
-  },footerIcon3: {
-    width: "12%",
-    height: 45,
-  },
-
 });
 
 export default App;
